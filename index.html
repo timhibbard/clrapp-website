@@ -437,7 +437,7 @@
         <div class="price-box">
           <h2>Upgrade to Pro</h2>
           <p>Unlock extra convenience features designed for regular listeners and families on the go.</p>
-          <p class="price">$0.99</p>
+          <p class="price"><span data-pro-price>$0.99</span></p>
           <p><strong>Product ID:</strong> <code>crlapppro</code><br /><strong>Type:</strong> One-time in-app purchase (not a subscription)<br /><strong>Restore:</strong> Available for previous Pro buyers</p>
           <a class="btn btn-primary" href="https://apps.apple.com/app/id539050644" target="_blank" rel="noopener noreferrer">Get the App</a>
         </div>
@@ -479,7 +479,7 @@
           </details>
           <details>
             <summary>Does Pro require a subscription?</summary>
-            <p>No. Pro is a one-time purchase, currently priced at $0.99 (region pricing may vary).</p>
+            <p>No. Pro is a one-time purchase, currently priced at <span data-pro-price>$0.99</span> (region pricing may vary).</p>
           </details>
           <details>
             <summary>Will the app work in landscape?</summary>
@@ -526,7 +526,7 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <div>© <span id="year"></span> Christian Radio Finder · Engraph</div>
+      <div>© <span id="year">2026</span> Christian Radio Finder · Engraph</div>
       <div class="social-links">
         <a href="https://apps.apple.com/app/id539050644" target="_blank" rel="noopener noreferrer">App Store</a>
         <a href="https://twitter.com/CRLApp" target="_blank" rel="noopener noreferrer">Twitter</a>
@@ -539,6 +539,7 @@
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
+    const proPrice = "$0.99";
 
     menuToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
@@ -550,6 +551,10 @@
         navLinks.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
       });
+    });
+
+    document.querySelectorAll("[data-pro-price]").forEach((node) => {
+      node.textContent = proPrice;
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
