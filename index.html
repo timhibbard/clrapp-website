@@ -211,7 +211,10 @@
 
     .features-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-    .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 100%; }
+    .testimonials-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
 
     .card {
       background: var(--card);
@@ -294,6 +297,8 @@
     .quote {
       font-style: italic;
       color: #38515f;
+      line-height: 1.7;
+      padding: 1.5rem;
     }
 
     .site-footer {
